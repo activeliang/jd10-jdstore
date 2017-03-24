@@ -1,0 +1,9 @@
+<h2>Edit Product</h2>
+
+<%= simple_form_for [:admin,@product] do |f| %>
+<div class="gorup"><%= f.input :title%></div>
+<div class="gorup"><%= f.input :description%></div>
+<div class="gorup"><%= f.input :quantity%></div>
+<div class="gorup"><%= f.input :price%></div>
+<%= f.submit 'Submit', data: {disable_with: "Submiting..."}%>
+<% end %>
