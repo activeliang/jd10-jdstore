@@ -5,5 +5,10 @@
 <div class="gorup"><%= f.input :description%></div>
 <div class="gorup"><%= f.input :quantity%></div>
 <div class="gorup"><%= f.input :price%></div>
+<% if @product.image.present?%>
+<span>目前商品图</span>
+<%= image_tag(@product.image.thumb.url, class:"thumbnail")%>
+<% end %>
+<div class="group"><%= f.input :image, as: :file%></div>
 <%= f.submit 'Submit', data: {disable_with: "Submiting..."}%>
 <% end %>
