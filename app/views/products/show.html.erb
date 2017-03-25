@@ -16,6 +16,10 @@
         <div class="product-price">
             ¥
             <%= @product.price %></div>
+        <% if @product.quantity.present? && @product.quantity > 0%>
         <%= link_to("加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-danger btn-lg pull-right")%>
+    <% else %>
+        <span class="pull-right label label-info label-lg">此商品已售空</span>
+        <% end %>
     </div>
 </div>
