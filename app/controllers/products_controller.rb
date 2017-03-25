@@ -10,7 +10,8 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    redirect_to :back,notice: "haha"
+    current_cart.add_product_to_cart(@product)
+    redirect_to :back, notice: "已成功加入购物车！"
   end
 
 end
